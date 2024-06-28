@@ -5,7 +5,7 @@ import Posts from "../../Components/common/Posts";
 import ProfileHeaderSkeleton from "../../Components/skeletons/ProfileHeaderSkeleton";
 import EditProfileModal from "./EditProfileModal";
 
-import { POSTS } from "../../utils/db/dummy";
+import { POSTS } from "../../utils/db/Dummy";
 
 import { FaArrowLeft } from "react-icons/fa6";
 import { IoCalendarOutline } from "react-icons/io5";
