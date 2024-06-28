@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import XSvg from "../../../Components/svgs/X";
+import XSvg from "../../../components/svgs/X";
 
 import { MdOutlineMail } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
@@ -17,6 +17,8 @@ const SignUpPage = () => {
 		fullName: "",
 		password: "",
 	});
+
+	const queryClient = useQueryClient();
 
 	const { mutate, isError, isPending, error } = useMutation({
 		mutationFn: async ({ email, username, fullName, password }) => {
@@ -40,6 +42,7 @@ const SignUpPage = () => {
 		},
 		onSuccess: () => {
 			toast.success("Account created successfully");
+			queryClient.invalidateQueries({ queryKey: ["authUser"] });
 		},
 	});
 
