@@ -19,7 +19,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const app = express();
+const app = (express.json({ limit: "5mb" }));
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json()); // middleware
